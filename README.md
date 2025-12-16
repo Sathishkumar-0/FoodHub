@@ -21,10 +21,17 @@ It allows users to explore restaurants, add food items to a cart, and place orde
 - `src/main/java` – Java source code (Servlets, DAO, POJO)
 - `src/main/webapp` – JSP pages, CSS, images
 
-## 📸 Screenshots
+## 📸 Application Screenshots
+
+### 🏬 Restaurant Listing Page
+![Restaurant Page](screenshots/restaurant.png)
+
+### 📖 Menu Page
+![Menu Page](screenshots/menu.png)
 
 ### 🛒 Cart Page
 ![Cart Page](screenshots/cart.png)
 
-### ✅ Order Confirmation Page
-![Order Confirmation](screenshots/success.png)
+### ✅ Order Success Page
+![Order Success Page](screenshots/success.png)
+
