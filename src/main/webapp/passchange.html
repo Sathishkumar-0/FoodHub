@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FoodHub</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: "Poppins", sans-serif;
+        background: linear-gradient(135deg, #000, #a80000);
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+      }
+
+      /* Navbar */
+      nav {
+        background-color: rgba(0, 0, 0, 0.85);
+        padding: 15px 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        z-index: 100;
+      }
+
+      nav .logo {
+        color: red;
+        font-size: 24px;
+        font-weight: 700;
+        padding: 2px 0;
+      }
+
+      nav ul {
+        list-style: none;
+        display: flex;
+        gap: 25px;
+        margin: 0;
+        padding: 0;
+      }
+
+      nav ul li a {
+        color: white;
+        text-decoration: none;
+        font-weight: 500;
+        transition: 0.3s;
+      }
+
+      nav ul li a:hover {
+        color: #ff3333;
+      }
+
+      /* Container */
+      .container {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+      }
+
+      /* Glowing card */
+      .change-box {
+        background-color: rgba(255, 255, 255, 0.97);
+        border-radius: 18px;
+        padding: 35px;
+        width: 400px;
+        text-align: center;
+        color: #222;
+        box-shadow: 0 0 20px rgba(255, 0, 0, 0.3);
+        border: 2px solid #ff0000;
+        animation: glow 2.5s infinite alternate, fadeIn 1.2s ease-in-out;
+      }
+
+      @keyframes glow {
+        0% {
+          box-shadow: 0 0 15px #ff0000, 0 0 25px #a80000;
+        }
+        100% {
+          box-shadow: 0 0 25px #ff4d4d, 0 0 40px #ff0000;
+        }
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .change-box h2 {
+        margin-bottom: 25px;
+        color: #a80000;
+        font-size: 22px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+      }
+
+      .input-box {
+        text-align: left;
+        margin-bottom: 18px;
+        position: relative;
+      }
+
+      .input-box label {
+        display: block;
+        color: #000;
+        font-weight: 500;
+        margin-bottom: 6px;
+      }
+
+      .input-box input {
+        width: 90%;
+        padding: 10px 35px 10px 10px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        outline: none;
+        transition: 0.3s;
+        font-size: 14px;
+      }
+
+      .input-box input:focus {
+        border-color: #ff0000;
+        box-shadow: 0 0 8px #ff0000;
+      }
+
+      /* Eye icon */
+      .input-box i {
+        position: absolute;
+        top: 35px;
+        right: 10px;
+        cursor: pointer;
+        color: #555;
+        transition: 0.3s;
+      }
+
+      .input-box i:hover {
+        color: #ff0000;
+      }
+
+      .btn {
+        background-color: #000;
+        color: white;
+        border: none;
+        padding: 9px 18px;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 15px;
+        transition: 0.3s;
+        width: 100px;
+        margin-top: 5px;
+        box-shadow: 0 0 10px #a80000;
+      }
+
+      .btn:hover {
+        background-color: #ff0000;
+        box-shadow: 0 0 20px #ff0000;
+        transform: scale(1.05);
+      }
+
+      @media (max-width: 768px) {
+        .change-box {
+          width: 85%;
+          padding: 30px;
+        }
+      }
+    </style>
+    <script>
+      function togglePassword(id, iconId) {
+        const input = document.getElementById(id);
+        const icon = document.getElementById(iconId);
+        if (input.type === "password") {
+          input.type = "text";
+          icon.textContent = "🙈";
+        } else {
+          input.type = "password";
+          icon.textContent = "👁️";
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <nav>
+      <div class="logo">FoodHub</div>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
+
+    <div class="container">
+      <div class="change-box">
+        <h2>Secure Password Update</h2>
+
+        <form action="changeservlet" method="post">
+          <div class="input-box">
+            <label for="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Enter your email"
+              required
+            />
+          </div>
+
+          <div class="input-box">
+            <label for="newPassword">New Password</label>
+            <input
+              type="password"
+              id="newPassword"
+              name="newpassword"
+              placeholder="Enter new password"
+              required
+            />
+            <i id="eye1" onclick="togglePassword('newPassword','eye1')">👁️</i>
+          </div>
+
+          <div class="input-box">
+            <label for="confirmPassword">Confirm Password</label>
+            <input
+              type="password"
+              id="confirmPassword"
+              name="confirmpassword"
+              placeholder="Confirm new password"
+              required
+            />
+            <i id="eye2" onclick="togglePassword('confirmPassword','eye2')"
+              >👁️</i
+            >
+          </div>
+
+          <button class="btn" type="submit">Submit</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

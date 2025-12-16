@@ -1,0 +1,289 @@
+@charset "UTF-8";
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+.registration{
+	display: flex;
+	justify-content:center;
+	align-items:center;
+}
+.registration img{
+	height: 100vh;
+	width: 100vw;
+}
+.regiscontent{
+	display: flex;
+	position: absolute;
+	height:500px;
+	border: 1px solid white;
+	border-radius: 8px;
+	background:transparent;
+	backdrop-filter:blur(5px);
+	box-shadow: 3px 3px 5px black;
+}
+.log{
+	display:flex;
+	flex-direction: column;
+	justify-content:center;
+	align-items:center;
+	padding: 5px 20px;
+	border-radius:5px 0 0 5px;
+}
+.log h2{
+	color: orange;
+	font-size: 40px;
+	text-shadow: 3px 3px 7px black;
+}
+.log p{
+	color: white;
+	font-size: 20px;
+	margin: 10px;
+}
+.log input{
+	color: blue;
+	padding: 5px 8px;
+	width:70px;
+	border-radius: 5px;
+	border: none; 
+}
+.reg {
+	border-radius:0 5px 5px 0;
+	padding: 5px 10px;
+	display:flex;	
+	align-items:center;
+	background-color:white;
+}
+.reg form{
+	display:flex;
+	flex-direction:column;
+	margin:10px 10px;
+	padding: 5px 10px;
+	width:280px;
+	overflow:hidden;
+	border-radius:15px;
+	border: 1px solid black;
+}
+.reg form label{
+	color:black;
+	padding-top:5px;
+	font-size:20px;
+	text-shadow:5px -2px 5px gray;
+}
+.reg form input {
+	border-radius: 10px;
+	border:none;
+	font-size:15px;
+	box-shadow:0 1px 10px gray;
+	height:32px;
+	padding: 0 5px;
+	color: gray;
+}
+.reg form input[type=submit]{
+	margin-bottom: 7px;
+	color: blue;
+}
+.reg form input[type=submit]:hover{
+	background-color: blue;
+	color: white;
+}
+form select{
+	border-radius: 10px;
+	height:32px;
+	font-size:15px;
+	border: none;
+	box-shadow:0 1px 10px gray;
+	margin-bottom: 8px;
+	
+}
+.logincard{
+	display: flex;
+	justify-content:center;
+	align-items:center;
+	height:100vh;
+	width:100vw;
+}
+.logincard>img{
+	height: 100%;
+	width: 100%;
+}
+.logincontent{
+	position: absolute;
+	display:flex;
+	height:450px;
+	width:650px;
+	border-radius: 9px;
+	border:1px solid white;
+	box-shadow: 3px 3px 10px black;
+}
+.welcome{
+	display:flex;
+	flex-direction:column;
+	justify-content:center;
+	align-items:center;
+	border-radius:8px 0 0 8px;
+}
+.welcome>img{
+	height: 100%;
+	width: 100%;
+	border-radius: 8px 0 0 8px;
+}
+.welcomecon{
+	color: white;
+	position: absolute;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	
+}
+.welcomecon h2{
+	font-size: 30px;
+}
+.welcomecon p{
+	font-size: 15px;
+	margin: 6px 4px;
+}
+.loginmsg{
+	background-color:white;
+	display: flex;
+	width:600px;
+	justify-content: center;	
+	align-items: center;
+	border-radius:0 8px 8px 0;	
+}
+.logicon{
+	padding:5px 5px;
+	margin:5px 5px;
+}
+.logicon form{
+	display:flex;
+	flex-direction:column;
+	
+}
+.logicon *{
+	margin-bottom: 10px;
+}
+.logicon form h3{
+	font-size: 25px;
+}
+.logicon form p{
+	font-size: 15px;
+	font-weight: lighter;
+}
+.logicon form label{
+	font-size: 20px;
+}
+.logicon form input{
+	height: 35px;
+	font-size: 20px;
+	padding:0 5px;
+	border-radius: 10px;
+	border: 1px solid black;
+}
+.logicon>form p>a{
+	text-decoration: none;
+}
+.btn{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.btn input{
+	border-radius: 5px;
+	padding: 3px 3px;
+	color: blue;
+	
+}
+.btn input:hover{
+	background-color: blue;	
+	color: white;
+	cursor: pointer;
+}
+.btn a{
+	text-decoration: none;
+}
+.changecard{
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	height: 100vh;
+	width: 100vw;
+}
+.changecard>img{
+	width: 100%;
+	height: 100%;
+}
+.changecontent{
+	border:2px solid yellow;
+	display:flex;
+	position:absolute;
+	justify-content:center;
+	align-items:center;
+	width:400px;
+	height: 280px;
+	border-radius:5px;
+	box-shadow:3px 3px 10px black;
+	background: transparent;
+	backdrop-filter:blur(3px);
+}
+
+.changecon{
+	border-radius:5px;
+	position:absolute;
+	padding: 5px 5px;
+}
+.changecon>form{
+	display: flex;
+	flex-direction: column;
+	padding: 5px 5px;
+}
+.changecon>form *{
+	margin-bottom:  5px;
+}
+.changecon>form>label{
+	font-size: 20px;
+	color: yellow;
+	text-shadow: 0 3px 5px black;
+}
+.changecon>form>input{
+	width: 300px;
+	padding:5px 5px;
+	font-size: 20px;
+	border-radius: 10px;
+	border: none;
+}
+.btncard{
+	display: flex;
+	justify-content: center;
+}
+.btncard>input{
+	padding: 5px 8px;
+	border-radius: 5px;
+	border: none;
+	color: blue;
+	font-size: 18px;	
+}
+.btncard>input:hover{
+	background-color: blue;
+	color: white;
+}
+.res{
+	display: flex;
+	border:1px solid black;
+	justify-content: center;
+	align-items: center;
+	width: 100vw;
+	height: 100vh;
+	flex-wrap: wrap;
+}
+.restaurantcard{
+	border:2px solid black;
+	width: 100px;
+	height: 100px;
+}
+.restaurantcard>img{
+	width: 100%;
+	height: 100%;
+}

@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FoodHub Registration</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
+
+      body {
+        height: 100vh;
+        width: 100%;
+        background: linear-gradient(135deg, #000, #8b0000);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        color: #000;
+        overflow: hidden;
+      }
+
+      /* Navbar */
+      nav {
+        background: #111;
+        color: #fff;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 40px;
+        height: 60px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        flex-shrink: 0;
+      }
+
+      nav h1 {
+        font-size: 24px;
+        color:red;
+        font-weight: 700;
+      }
+
+      nav p {
+        font-size: 15px;
+        color: #ccc;
+      }
+
+      /* Main container */
+      .container {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: calc(100vh - 60px);
+        padding: 20px;
+      }
+
+      /* Card box */
+      .card {
+        display: flex;
+        width: 70%; /* smaller width */
+        height: 90%;
+        background: #fff;
+        border-radius: 15px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+        overflow: hidden;
+      }
+
+      /* Left panel */
+      .left {
+        background: linear-gradient(145deg, #111, #700000);
+        color: #fff;
+        width: 40%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 30px;
+      }
+
+      .left h2 {
+        font-size: 28px;
+        color: #ff1a1a;
+        margin-bottom: 15px;
+      }
+
+      .left p {
+        margin-bottom: 20px;
+        color: #ccc;
+        font-size: 15px;
+      }
+
+      .left button {
+        background: #ff1a1a;
+        color: #fff;
+        border: none;
+        padding: 10px 25px;
+        border-radius: 8px;
+        cursor: pointer;
+        font-weight: bold;
+        transition: 0.3s;
+      }
+
+      .left button:hover {
+        background: #e60000;
+        transform: scale(1.05);
+      }
+
+      /* Right panel */
+      .right {
+        background: #fff;
+        color: #000;
+        width: 60%;
+        padding: 40px 60px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        overflow: hidden;
+      }
+
+      .right h2 {
+        text-align: center;
+        color: #ff1a1a;
+        margin-bottom: 25px;
+      }
+
+      /* Form layout */
+      form {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 15px 20px;
+      }
+
+      label {
+        font-weight: 600;
+        color: #333;
+        margin-bottom: 5px;
+        display: block;
+      }
+
+      input,
+      select {
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        font-size: 15px;
+        width: 100%;
+        outline: none;
+        transition: border 0.3s, box-shadow 0.3s;
+      }
+
+      input:focus,
+      select:focus {
+        border-color: #ff1a1a;
+        box-shadow: 0 0 5px rgba(255, 26, 26, 0.5);
+      }
+
+      /* Password field wrapper */
+      .password-wrapper {
+        position: relative;
+        display: flex;
+        align-items: center;
+      }
+
+      .password-wrapper input {
+        width: 100%;
+        padding-right: 35px;
+      }
+
+      .toggle-password {
+        position: absolute;
+        right: 10px;
+        cursor: pointer;
+        color: #666;
+        font-size: 18px;
+        user-select: none;
+        transition: color 0.3s;
+      }
+
+      .toggle-password:hover {
+        color: #ff1a1a;
+      }
+
+      select {
+        background-color: #fff;
+        color: #000;
+        cursor: pointer;
+      }
+
+      select option {
+        color: #000;
+        background: #fff;
+      }
+
+      .submit-container {
+        grid-column: span 2;
+        text-align: center;
+        margin-top: 10px;
+      }
+
+      .submit-btn {
+        background: #ff1a1a;
+        color: #fff;
+        border: none;
+        padding: 12px 40px;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 16px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+      }
+
+      .submit-btn:hover {
+        background: #e60000;
+        transform: scale(1.05);
+      }
+
+      /* Responsive */
+      @media (max-width: 900px) {
+        .card {
+          flex-direction: column;
+          width: 90%;
+          height: 95%;
+        }
+
+        .left,
+        .right {
+          width: 100%;
+          border-radius: 0;
+        }
+
+        form {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <h1>FoodHub</h1>
+      <p>Welcome to the Food Ordering System</p>
+    </nav>
+
+    <div class="container">
+      <div class="card">
+        <div class="left">
+          <h2>Welcome to FoodHub</h2>
+          <p>Already have an account?</p>
+          <a href="login.html"><button>Login</button></a>
+        </div>
+
+        <div class="right">
+          <h2>Create Account</h2>
+          <form action="RegisterServlet" method="post">
+            <div>
+              <label>Name</label>
+              <input type="text" id="name" name="name" required />
+            </div>
+
+            <div>
+              <label>Username</label>
+              <input type="text" id="username" name="username" required />
+            </div>
+
+            <div>
+              <label>Password</label>
+              <div class="password-wrapper">
+                <input type="password" id="password" name="password" required />
+                <span class="toggle-password" onclick="togglePassword()"
+                  >👁️</span
+                >
+              </div>
+            </div>
+
+            <div>
+              <label>Email</label>
+              <input type="email" id="email" name="email" required />
+            </div>
+
+            <div>
+              <label>Phone</label>
+              <input type="tel" id="phone" name="phone" required />
+            </div>
+
+            <div>
+              <label>Address</label>
+              <input type="text" id="address" name="address" required />
+            </div>
+
+            <div>
+              <label for="role">Role</label>
+              <select id="role" name="role" required>
+                <option value="" disabled selected>Select role</option>
+                <option name="customer">Customer</option>
+                <option name="admin">Admin</option>
+                <option name="delivery">Delivery</option>
+              </select>
+            </div>
+
+            <div class="submit-container">
+              <button type="submit" class="submit-btn">Submit</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function togglePassword() {
+        const passwordField = document.getElementById("password");
+        const toggleIcon = document.querySelector(".toggle-password");
+        if (passwordField.type === "password") {
+          passwordField.type = "text";
+          toggleIcon.textContent = "🙈";
+        } else {
+          passwordField.type = "password";
+          toggleIcon.textContent = "👁️";
+        }
+      }
+    </script>
+  </body>
+</html>
