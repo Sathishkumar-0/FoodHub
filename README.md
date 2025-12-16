@@ -20,10 +20,3 @@ It allows users to explore restaurants, add food items to a cart, and place orde
 ## 📦 Project Structure
 - `src/main/java` – Java source code (Servlets, DAO, POJO)
 - `src/main/webapp` – JSP pages, CSS, images
-
-## ▶️ How to Run
-1. Extract `FoodHub.zip`
-2. Import into Eclipse as a Dynamic Web Project
-3. Configure Apache Tomcat
-4. Setup MySQL database
-5. Run on server
